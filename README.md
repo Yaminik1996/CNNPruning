@@ -22,5 +22,5 @@
       source run.sh
       ```
 
-## Find documentation for this code at docs/COMPSCI 532 PROJECT2 REPORT
+Find documentation for this code at docs/documentation.pdf
 Credits to https://github.com/huyvnphan/PyTorch_CIFAR10 for setting up pretrained model on CIFAR10 data.
