@@ -5,6 +5,7 @@ from module import CIFAR10Module
 from pytorch_lightning import Trainer
 from argparse import ArgumentParser
 
+
 def calculate_sparsity(model):
   total_count = 0
   zero_count = 0
@@ -50,6 +51,7 @@ if __name__ == "__main__":
 
   args = Args()
   data = CIFAR10Data(args)
+
 
   model1 = torch.load("one_shot_50.pth",map_location=torch.device('cpu'))
   print("Sparsity of model", calculate_sparsity(model1))
