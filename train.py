@@ -15,6 +15,7 @@ import math
 from data import CIFAR10Data
 from module import CIFAR10Module
 
+#Function to calculate sparsity of the model. It counts both the total number of parameters and zero parameters and divides them to calculate the sparsity.
 def calculate_sparsity(model):
   total_count = 0
   zero_count = 0
@@ -27,6 +28,8 @@ def calculate_sparsity(model):
   print("Total params: ", total_count)
   print("Zero params: ", zero_count)
   return (math.ceil(zero_count*100/total_count))
+
+
 
 def main(args):
 

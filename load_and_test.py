@@ -5,7 +5,7 @@ from module import CIFAR10Module
 from pytorch_lightning import Trainer
 from argparse import ArgumentParser
 
-
+#Function to calculate sparsity of the model. It counts both the total number of parameters and zero parameters and divides them to calculate the sparsity.
 def calculate_sparsity(model):
   total_count = 0
   zero_count = 0
@@ -19,6 +19,7 @@ def calculate_sparsity(model):
   print("Zero params: ", zero_count)
   return (math.ceil(zero_count*100/total_count))
 
+#Args class to send arguments to dataloader to download CIFAR 10 dataset
 class Args:
   def __init__(self):
     self.batch_size = 256
@@ -36,6 +37,7 @@ class Args:
     self.test_phase = 1
     self.weight_decay = 0.01
 
+#Main function
 if __name__ == "__main__":
   trainer = Trainer(
             fast_dev_run=bool(0),
@@ -52,27 +54,32 @@ if __name__ == "__main__":
   args = Args()
   data = CIFAR10Data(args)
 
-
+  #Run inference and calculate test accuracy for one_shot_50.pth model
   model1 = torch.load("one_shot_50.pth",map_location=torch.device('cpu'))
   print("Sparsity of model", calculate_sparsity(model1))
   trainer.test(model1, data.test_dataloader())
 
+  #Run inference and calculate test accuracy for one_shot_75.pth model
   model2 = torch.load("one_shot_75.pth",map_location=torch.device('cpu'))
   print("Sparsity of model", calculate_sparsity(model2))
   trainer.test(model2, data.test_dataloader())
 
+  #Run inference and calculate test accuracy for one_shot_90.pth model
   model3 = torch.load("one_shot_90.pth",map_location=torch.device('cpu'))
   print("Sparsity of model", calculate_sparsity(model3))
   trainer.test(model3, data.test_dataloader())
 
+  #Run inference and calculate test accuracy for iterative_50.pth model
   model4 = torch.load("iterative_50.pth",map_location=torch.device('cpu'))
   print("Sparsity of model", calculate_sparsity(model4))
   trainer.test(model4, data.test_dataloader())
-
+  
+  #Run inference and calculate test accuracy for iterative_75.pth model
   model5 = torch.load("iterative_75.pth",map_location=torch.device('cpu'))
   print("Sparsity of model", calculate_sparsity(model5))
   trainer.test(model5, data.test_dataloader())
 
+ #Run inference and calculate test accuracy for iterative_90.pth model
   model6 = torch.load("iterative_90.pth",map_location=torch.device('cpu'))
   print("Sparsity of model", calculate_sparsity(model6))
   trainer.test(model6, data.test_dataloader())
