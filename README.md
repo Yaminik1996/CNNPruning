@@ -10,13 +10,7 @@
         virtualenv -p python3 pruning
         source pruning/bin/activate
         
-
-2. Install required packages:
-
-      ```
-      pip install -r requirements.txt
-      ```
-3. Run the shell script **run.sh**, which downloads the model and also runs load_and_test.py
+2. Run the shell script **run.sh**, which downloads the model and also runs load_and_test.py
 
       ```
       source run.sh
