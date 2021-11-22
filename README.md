@@ -16,5 +16,10 @@ Steps to run the project:
       ```
       pip install -r requirements.txt
       ```
+3. Run the shell script **run.sh**, which downloads the model and also runs load_and_test.py
+
+      ```
+      source run.sh
+      ```
       
 Credits to https://github.com/huyvnphan/PyTorch_CIFAR10 for setting up pretrained model on CIFAR10 data.
