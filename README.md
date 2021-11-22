@@ -3,7 +3,7 @@
 2. Yamini Kashyap
 3. Indrajeet Nandy
 
-Steps to run the project:
+## Steps to run the project:
 1. Create a virtual environment where you can install the required libraries and run the pruned models:
 
         
