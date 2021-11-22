@@ -3,4 +3,4 @@
 2. Yamini Kashyap
 3. Indrajeet Nandy
 
-Credits to https://github.com/huyvnphan/PyTorch_CIFAR10 for setting up pretrained model for CIFAR10 data.
+Credits to https://github.com/huyvnphan/PyTorch_CIFAR10 for setting up pretrained model on CIFAR10 data.
