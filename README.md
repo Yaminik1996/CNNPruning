@@ -1,4 +1,4 @@
-Team members:
+## Team members:
 1. Nidhi Chandra
 2. Yamini Kashyap
 3. Indrajeet Nandy
